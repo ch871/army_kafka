@@ -19,9 +19,6 @@ def get_by_email(email):
 
 
 @email_blueprint.route('email/most_common', methods=['GET'])
-def get_by_email():
+def get_most_common_word():
     most_common = find_most_common_word()
     return jsonify(most_common), 200
-
-
-most_common

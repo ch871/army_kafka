@@ -17,4 +17,9 @@ def find_most_common_word():
     with session_maker() as session:
         explosive_sentences = [explosive.sentence for explosive in session.query(Explosive).all()]
         hostage_sentences = [hostage.sentence for hostage in session.query(Hostage).all()]
-        return Counter(hostage_sentences + explosive_sentences).most_common()
+        all_sentences = hostage_sentences + explosive_sentences
+        all_joined = " ".join(all_sentences)
+        all_words = " ".split(all_joined)
+        most_common_word = Counter(all_words).most_common()
+
+        return most_common_word
