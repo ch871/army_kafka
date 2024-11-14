@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 import message_producer.app.service.email_service as email_service
+from db.repositories.sentences_repo import get_all_sentences_by_email
 
 email_blueprint = Blueprint('email', __name__)
 
@@ -9,3 +10,9 @@ def new_email():
     email = request.json
     email_service.sorting_emails(email)
     return jsonify("info for new email recived"), 200
+
+
+@email_blueprint.route('email/<email>', methods=['GET'])
+def get_by_email(email):
+    sentences = get_all_sentences_by_email(email)
+    return jsonify(sentences), 200

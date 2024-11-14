@@ -14,5 +14,5 @@ class Terrorist(Base):
     device = relationship("Device", back_populates="terrorist", uselist=False)
     location = relationship("Location", back_populates="terrorist", uselist=False)
 
-    explosives = relationship("Explosive", back_populates="terrorist")
-    hostages = relationship("Hostage", back_populates="terrorist")
+    explosives = relationship("Explosive", back_populates="terrorist", lazy='joined')
+    hostages = relationship("Hostage", back_populates="terrorist", lazy='joined')
