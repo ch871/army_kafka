@@ -1,5 +1,6 @@
 from flask import Flask
 from routes.email_routes import email_blueprint
+from db.models import *
 
 
 def create_app():

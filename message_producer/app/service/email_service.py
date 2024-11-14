@@ -7,11 +7,11 @@ def sorting_emails(email):
     sentences = email["sentences"]
     for sentence in sentences:
         checked_message = check_terror_message(sentence)
-        if checked_message is "explosive":
-            email["sentences"] = sentence
+        if checked_message == "explosive":
+            # email["sentences"] = sentence
             email_producer.produce_explosive_messages(email)
-        if checked_message is "hostage":
-            email["sentences"] = sentence
+        if checked_message == "hostage":
+            # email["sentences"] = sentence
             email_producer.produce_hostage_messages(email)
 
 

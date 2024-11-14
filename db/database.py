@@ -4,12 +4,10 @@ from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
 
-engine = create_engine(os.environ['PSQL_DB_URL'])
-session_maker = sessionmaker(bind=engine)
-
 load_dotenv(verbose=True)
 
-Base = declarative_base()
+engine = create_engine(os.environ['PSQL_DB_URL'])
+session_maker = sessionmaker(bind=engine)
 
 
 def get_mongo_client():
@@ -19,4 +17,3 @@ def get_mongo_client():
 def get_messages_collection():
     db = get_mongo_client()['army']
     return db['messages']
-

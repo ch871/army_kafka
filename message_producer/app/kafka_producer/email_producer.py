@@ -3,7 +3,7 @@ from kafka_settings.producer import produce
 import os
 
 load_dotenv(verbose=True)
-all_messages_topic = os.environ['ALL_MESSAGES_TOPIC']
+all_messages_topic = os.environ["ALL_MESSAGES_TOPIC"]
 explosive_topic = os.environ["EXPLOSIVE_TOPIC"]
 hostage_topic = os.environ["HOSTAGE_TOPIC"]
 

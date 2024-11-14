@@ -11,5 +11,5 @@ class Device(Base):
     device_id = Column(String)
 
     terrorist_id = Column(Integer, ForeignKey("terrorists.id"))
-
     terrorist = relationship("Terrorist", back_populates="device")
+

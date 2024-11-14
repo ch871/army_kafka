@@ -7,7 +7,7 @@ load_dotenv(verbose=True)
 new_message_topic = os.environ['ALL_MESSAGES_TOPIC']
 
 
-def consume_members():
+def consume_messages():
     consume(
         topic=new_message_topic,
         function=message_service.insert_message
