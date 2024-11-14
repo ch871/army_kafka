@@ -2,10 +2,11 @@ from db.database import session_maker
 from db.models import Explosive
 
 
-def insert_explosive(explosive_to_add):
+def insert_explosive(sentence, terrorist_id):
     with session_maker() as session:
         explosive = Explosive(
-            sentence=explosive_to_add["sentences"]
+            sentence=sentence,
+            terrorist_id=terrorist_id
         )
         session.add(explosive)
         session.commit()
