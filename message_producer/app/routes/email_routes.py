@@ -7,5 +7,5 @@ email_blueprint = Blueprint('email', __name__)
 @email_blueprint.route('email', methods=['POST'])
 def new_email():
     email = request.json
-    email_service.produce_email(email)
+    email_service.sorting_emails(email)
     return jsonify("info for new email recived"), 200
